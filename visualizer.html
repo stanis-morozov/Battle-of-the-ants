@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>AntsVisualizer</title>
+        <meta charset='utf-8'/>       
+        <script src="http://informatics.mccme.ru/lib/jquery/2.0.0/jquery.min.js"></script>
+        <style type="text/css">
+          input[type="range"] {
+            -webkit-appearance: none;
+            background-color: #8899FF;
+            margin-top: 12px;
+            margin-left: 15px;
+            height: 15px;
+            width: 390px;
+            border-radius: 5px;
+            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+          }                
+          .btn {
+            height: 20px;
+          }
+          /*input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #000;
+            box-shadow: 1px 2px 3px rgba(0,0,0,0.6);
+          }*/
+        </style>
+        
+    </head>
+    <body>
+        <div>
+          <span id="step_counter">
+            Ход 0. 
+          </span>        
+          <button class="btn" onclick="jump(-100)"> <<< </button>
+          <button class="btn" onclick="jump(-10)"> << </button>
+          <button class="btn" onclick="jump(-1)"> < </button>
+          <button class="btn" onclick="jump(1)"> > </button> 
+          <button class="btn" onclick="jump(10)"> >> </button>
+          <button class="btn" onclick="jump(100)"> >>> </button>
+          <font size="2" color="red"> Визуализатор постоянно обновляется, не забывайте нажимать Ctrl+Shift+R </font>  
+        </div>
+        
+        <div>
+        <canvas height='600' width='800' id='canvas'>Обновите браузер</canvas>         
+        </div>
+        <div>
+        
+        </div>
+        <div>         
+            <button onclick="play()" > Play </button>         
+            <button onclick="stop()"> Stop </button>          
+            <button onclick="restart()"> Restart </button>                 
+            Скорость воспроизведения <input oninput="changeSpeed()" id="sscroll" type="range" min="0" max="60" step="1" value="60">
+        </div>
+        <script type="text/javascript" src="./visualizer.js"></script>        
+    </body>
+</html>
